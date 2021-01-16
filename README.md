@@ -3,6 +3,8 @@ README.md Generator
 <img src="https://img.shields.io/badge/license-MIT-brightgreen"/>
 </h1>
 
+[![Watch the video](./utils/readme-generator.png)](https://drive.google.com/file/d/1G2dKRj6WFMKholclKDJZhBvqIo3jBmnl/preview)
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)

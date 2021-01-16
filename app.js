@@ -35,7 +35,7 @@ const questions = [
     {
         type: 'input',
         name: 'projectUsage',
-        message: 'What is this project usage for?'
+        message: 'How to use this applicaion?'
     },
     {
         type: 'list',
