@@ -18,7 +18,7 @@ const questions = [
     {
         type: 'input',
         name: 'userName',
-        message: 'Please enter Your Name:',
+        message: 'Please enter Your GitHub username:',
         validate: validate
     },
     {
@@ -32,6 +32,40 @@ const questions = [
         name: 'projectDecription',
         message: 'Please enter a Description of your Project:',
         validate: validate
+    },
+    {
+        type: 'input',
+        name: 'projectInstallation',
+        message: 'Please describe the installation process if any:'
+    },
+    {
+        type: 'input',
+        name: 'projectUsage',
+        message: 'What is this project usage for?'
+    },
+    {
+        type: 'list',
+        name: 'projectLicense',
+        message: 'Chose the appropriate license for this project:',
+        choices: [
+            'Apache',
+            'Academic',
+            'GNU',
+            'ISC',
+            'MIT',
+            'Mozilla',
+            'Open'
+        ]
+    },
+    {
+        type: 'input',
+        name: 'projectContributors',
+        message: 'Who contributed to this Project?'
+    },
+    {
+        type: 'input',
+        name: 'projectQuestions',
+        message: 'Any questions'
     }
 ];
 
