@@ -11,7 +11,7 @@ function generateMarkdown(readmeData) {
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
-  - [Contributors](#Contributors)
+  - [Contributors](#contributors)
   - [Tests](#tests)
   - [Questions](#questions)
   
