@@ -46,7 +46,7 @@ THEN I am taken to the corresponding section of the README
 ```
 
 ## Screencast
-[![Watch the video](./utils/readme-generator.png)](https://drive.google.com/file/d/1fhJ8WjSsmwnVfBhrqTkjKFW5GMdggjMu/view?usp=sharing){:target="_blank"}
+[![Watch the video](./utils/readme-generator.png)](https://drive.google.com/file/d/1fhJ8WjSsmwnVfBhrqTkjKFW5GMdggjMu/view?usp=sharing)
 
 ## Installation
 [node.js](https://nodejs.org)<br />
