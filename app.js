@@ -17,12 +17,6 @@ const validate = async (nameInput) => {
 const questions = [
     {
         type: 'input',
-        name: 'userName',
-        message: 'Please enter Your GitHub username:',
-        validate: validate
-    },
-    {
-        type: 'input',
         name: 'projectTitle',
         message: 'Please enter a Project Title:',
         validate: validate
@@ -64,8 +58,20 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'projectQuestions',
-        message: 'Any questions'
+        name: 'projectTest',
+        message: 'Any Tests?'
+    },
+    {
+        type: 'input',
+        name: 'userName',
+        message: 'Please enter your GitHub username:',
+        validate: validate
+    },
+    {
+        type: 'input',
+        name: 'userEmail',
+        message: 'Please enter your email addess:',
+        validate: validate
     }
 ];
 
