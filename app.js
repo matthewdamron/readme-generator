@@ -1,8 +1,18 @@
 // TODO: Include packages needed for this application
-const { promises } = require('fs');
-const inquirer = require('inquirer');
+// const fs = require('fs');
 // const { cpuUsage } = require('process');
+const inquirer = require('inquirer');
+const writeFile = require('./utils/createMarkdown')
 const generateMarkdown = require('./utils/generateMarkdown');
+
+const validate = async (nameInput) => {
+    if (nameInput) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -10,35 +20,26 @@ const questions = [
         type: 'input',
         name: 'userName',
         message: 'Please enter Your Name:',
-        // type: 'input',
-        // name: 'projectTitle',
-        // message: 'Please enter your Project Title:'
+        validate: validate
     },
     {
         type: 'input',
         name: 'projectTitle',
-        message: 'Please enter a Project Title:'
+        message: 'Please enter a Project Title:',
+        validate: validate
+    },
+    {
+        type: 'input',
+        name: 'projectDecription',
+        message: 'Please enter a Description of your Project:',
+        validate: validate
     }
 ];
 
-const john = {
-    first: 'John',
-    last: 'Snow',
-    title: 'Prince',
-    family: {
-      brothers: {
-        brother1: 'Rob Stark',
-        brother2: 'Rickon Stark'
-      },
-      sisters: {
-        sister1: 'Arya Stark',
-        sister2: 'Sansa Stark'
-      }
-    }
-};
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// // TODO: Create a function to write README file
+// function writeToFile(data) {
+//     fs.writeToFile('./dist/README.md', data);
+// }
 
 // TODO: Create a function to initialize app
 // const prompt = inquirer.createPromptModule();
@@ -47,29 +48,9 @@ function writeToFile(fileName, data) {}
 const initPrompts = () => {
     return inquirer
         .prompt(questions)
-//         // {
-//         //     type: 'input',
-//         //     name: 'projectTitle',
-//         //     message: 'Please enter a Project Title: ',
-//         //     validate: validate
-//         // },
-//         // {
-//         //     type: questions.userName.type,
-//         //     name: questions.userName.name,
-//         //     message: questions.userName.message,
-//         //     validate: validate
-//         // }
         
-    // ])
-    .then(answers => {
-        console.log(answers);
-        // questions.push(answers);
-        console.log(answers.projectTitle);
-        console.log(questions);
-        // console.log(john);
-        // const { projectTitle } = questions;
-        // console.log(projectTitle);
-    });
+        // writeToFile(generateMarkdownFile);
+    // });
 };
 
 // const validate = function(nameInput) {
@@ -81,5 +62,20 @@ const initPrompts = () => {
 //     }
 // }
 
+
 // Function call to initialize app
 initPrompts()
+
+.then(answers => {
+    return generateMarkdown(answers);
+})
+// .then(answers => {
+// // console.log(answers);
+// // console.log(answers.projectTitle);
+// const generateMarkdown = generateMarkdown(answers);
+// })
+// .then()
+.then(readme => {
+    return writeFile(readme);
+
+});
