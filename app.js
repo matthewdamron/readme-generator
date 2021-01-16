@@ -1,10 +1,9 @@
 // TODO: Include packages needed for this application
-// const fs = require('fs');
-// const { cpuUsage } = require('process');
 const inquirer = require('inquirer');
 const writeFile = require('./utils/createMarkdown')
 const generateMarkdown = require('./utils/generateMarkdown');
 
+// function to validate response
 const validate = async (nameInput) => {
     if (nameInput) {
         return true;
@@ -36,46 +35,26 @@ const questions = [
     }
 ];
 
-// // TODO: Create a function to write README file
-// function writeToFile(data) {
-//     fs.writeToFile('./dist/README.md', data);
-// }
-
 // TODO: Create a function to initialize app
-// const prompt = inquirer.createPromptModule();
-// prompt(questions);    
-
 const initPrompts = () => {
     return inquirer
         .prompt(questions)
-        
-        // writeToFile(generateMarkdownFile);
-    // });
 };
-
-// const validate = function(nameInput) {
-//     if (nameInput) {
-//       return true;
-//     } else {
-//       console.log(nameInput);
-//       return false;
-//     }
-// }
-
 
 // Function call to initialize app
 initPrompts()
-
-.then(answers => {
-    return generateMarkdown(answers);
-})
-// .then(answers => {
-// // console.log(answers);
-// // console.log(answers.projectTitle);
-// const generateMarkdown = generateMarkdown(answers);
-// })
-// .then()
-.then(readme => {
-    return writeFile(readme);
-
-});
+    // function to generate readme
+    .then(readmeData => {
+    return generateMarkdown(readmeData);
+    })
+    // function to create readme file
+    .then(createReadme => {
+        return writeFile(createReadme);
+    })
+    // function to display if the readme was created
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+    })
+    .catch(err => {
+        console.log(err);
+    });

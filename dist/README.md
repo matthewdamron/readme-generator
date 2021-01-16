@@ -1,2 +1,2 @@
-# This is my Project Title
+# My Project Title
 
